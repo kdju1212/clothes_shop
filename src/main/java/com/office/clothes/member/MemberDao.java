@@ -117,4 +117,20 @@ public class MemberDao {
 		return result;
 	}
 
+	/* 비밀번호 변경 확인 */
+	public int modifyPwdConfirm(String user_id, String new_pwd) {
+
+		String sql = "update member set pwd = ? ,mod_date = sysdate where user_id =?";
+		int result = -1;
+
+		try {
+
+			result = jdbcTemplate.update(sql, passwordEncoder.encode(new_pwd), user_id);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
 }

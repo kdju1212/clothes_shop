@@ -10,6 +10,7 @@
 <body>
 	마이페이지
 	<a href="<c:url value='/member/modifyForm' />">정보 수정</a>
+	<a href="<c:url value='/member/modifyPwdForm' />">비밀번호 변경</a>
 	<a href="<c:url value='/member/dropForm' />">탈퇴</a>
 </body>
 </html>

@@ -34,4 +34,9 @@ public class MemberService {
 		return memberDao.getUser(user_id);
 	}
 
+	public int modifyPwdConfirm(String user_id, String new_pwd) {
+
+		return memberDao.modifyPwdConfirm(user_id, new_pwd);
+	}
+
 }

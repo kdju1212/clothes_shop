@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -138,6 +139,33 @@ public class MemberController {
 			session.setAttribute("loginedMemberVo", loginedMemberVo);
 			nextPage = "redirect:/";
 
+		}
+
+		return nextPage;
+	}
+
+	/* 비밀번호 변경 폼 */
+	@GetMapping("modifyPwdForm")
+	public String modifyPwdForm(HttpSession session, Model model) {
+
+		MemberVo loginedMemberVo = (MemberVo) session.getAttribute("loginedMemberVo");
+		model.addAttribute("loginedMemberVo", loginedMemberVo);
+
+		return "member/modifyPwdForm";
+	}
+
+	/* 비밀번호 변경 확인 */
+	@PostMapping("modifyPwdConfirm")
+	public String modifyPwdConfirm(HttpSession session, MemberVo memberVo, @RequestParam("new_pwd") String new_pwd) {
+		String nextPage = "ng";
+
+		int result = memberService.modifyPwdConfirm(memberVo.getUser_id(), new_pwd);
+
+		if (result > 0) {
+
+			MemberVo loginedMemberVo = memberService.getUser(memberVo.getUser_id());
+			session.setAttribute("loginedMemberVo", loginedMemberVo);
+			nextPage = "redirect:/";
 		}
 
 		return nextPage;

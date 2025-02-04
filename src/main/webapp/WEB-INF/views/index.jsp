@@ -15,7 +15,7 @@
 			<!-- 첫 번째 이미지 -->
 			<img id="imageSlider" style="width: 25%; height: 25%;"
 				src="${pageContext.request.contextPath}/images/image1.jpg"
-				alt="Image 1">
+				alt="Image 1" />
 		</div>
 	</div>
 
