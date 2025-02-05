@@ -16,11 +16,20 @@ public class HomeDao {
 
 	public List<HomeVo> home() {
 
-		String sql = "select * from employees";
+		String sql = "select * from goods";
 		RowMapper<HomeVo> rowMapper = new BeanPropertyRowMapper<>(HomeVo.class);
 
 		// 쿼리 실행: 댓글 목록 가져오기
 		return jdbcTemplate.query(sql, rowMapper);
+	}
+
+	public HomeVo getgoodsNo(int goodsId) {
+
+		String sql = "select * from goods where goodsId = ? ";
+		RowMapper<HomeVo> rowMapper = new BeanPropertyRowMapper<>(HomeVo.class);
+
+		// 쿼리 실행: 댓글 목록 가져오기
+		return jdbcTemplate.queryForObject(sql, rowMapper, goodsId);
 	}
 
 }

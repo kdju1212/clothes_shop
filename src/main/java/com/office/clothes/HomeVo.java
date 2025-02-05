@@ -5,8 +5,16 @@ import lombok.Data;
 @Data
 public class HomeVo {
 
-	int employee_id;
-	String first_name;
-	String last_name;
-	String hire_date;
+	int goodsId;
+	String goodsName;
+	String goodsCategory;
+	String goodsContent;
+	int goodsPrice;
+	int goodsSale;
+	int goodsInventory;
+	int goodsCount;
+	String goodsImg1;
+	String goodsImg2;
+	String goodsImg3;
+	String goodsDate;
 }

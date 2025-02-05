@@ -16,4 +16,9 @@ public class HomeService {
 		return homeDao.home();
 	}
 
+	public HomeVo getgoodsNo(int goodsId) {
+
+		return homeDao.getgoodsNo(goodsId);
+	}
+
 }
