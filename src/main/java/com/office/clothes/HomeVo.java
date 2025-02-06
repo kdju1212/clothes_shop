@@ -9,10 +9,12 @@ public class HomeVo {
 	String goodsName;
 	String goodsCategory;
 	String goodsContent;
+	String goodsSize;
+	String goodsColor;
 	int goodsPrice;
 	int goodsSale;
-	int goodsInventory;
-	int goodsCount;
+	int goodsInventory; // 재고
+	int goodsCount; // 조회수
 	String goodsImg1;
 	String goodsImg2;
 	String goodsImg3;

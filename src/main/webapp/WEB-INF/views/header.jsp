@@ -18,10 +18,10 @@
 					<li><a href="<c:url value='/' />">홈</a></li>
 					<li class="dropdown"><a href="javascript:void(0)">카테고리</a>
 						<ul class="dropdown-menu">
-							<li><a href="<c:url value='/list/filter?category=한식' />">한식</a></li>
-							<li><a href="<c:url value='/list/filter?category=중식' />">중식</a></li>
-							<li><a href="<c:url value='/list/filter?category=일식' />">일식</a></li>
-							<li><a href="<c:url value='/list/filter?category=양식' />">양식</a></li>
+							<li><a href="<c:url value='/list/filter?category=상의' />">상의</a></li>
+							<li><a href="<c:url value='/list/filter?category=하의' />">하의</a></li>
+							<li><a href="<c:url value='/list/filter?category=아우터' />">아우터</a></li>
+							<li><a href="<c:url value='/list/filter?category=신발' />">신발</a></li>
 							<li><a href="<c:url value='/list/filter?category=기타' />">기타</a></li>
 						</ul></li>
 					<li><a href="<c:url value='/list/ranking' />">랭킹</a></li>
@@ -34,12 +34,13 @@
 						<li><a href="<c:url value='/' />">홈</a></li>
 						<li class="dropdown"><a href="javascript:void(0)">카테고리</a>
 							<ul class="dropdown-menu">
-								<li><a href="<c:url value='/list/filter?category=한식' />">한식</a></li>
-								<li><a href="<c:url value='/list/filter?category=중식' />">중식</a></li>
-								<li><a href="<c:url value='/list/filter?category=일식' />">일식</a></li>
-								<li><a href="<c:url value='/list/filter?category=양식' />">양식</a></li>
+								<li><a href="<c:url value='/list/filter?category=상의' />">상의</a></li>
+								<li><a href="<c:url value='/list/filter?category=하의' />">하의</a></li>
+								<li><a href="<c:url value='/list/filter?category=아우터' />">아우터</a></li>
+								<li><a href="<c:url value='/list/filter?category=신발' />">신발</a></li>
 								<li><a href="<c:url value='/list/filter?category=기타' />">기타</a></li>
 							</ul></li>
+						<li><a href="<c:url value='/list/cart' />">장바구니</a></li>
 						<li><a href="<c:url value='/list/ranking' />">랭킹</a></li>
 						<li><a href="<c:url value='/member/mypage' />">마이페이지</a></li>
 						<li><a href="<c:url value='/member/logout' />"
