@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.office.clothes.HomeVo;
 import com.office.clothes.member.MemberVo;
 
 @Repository
@@ -39,10 +38,8 @@ public class ListDao {
 
 	public List<ListVo> getGoodsListByUserId(int user_no) {
 		// 1. user_id가 1인 상품의 goodsId 리스트 가져오기
-		List<Integer> goodsIds = jdbcTemplate.queryForList("SELECT goodsId FROM cart WHERE user_no = ?", Integer.class, // 반환
-																														// 타입
-				user_no // user_id 값
-		);
+		List<Integer> goodsIds = jdbcTemplate.queryForList("SELECT goodsId FROM cart WHERE user_no = ?", Integer.class,
+				user_no);
 
 		// 2. goodsId 목록을 기반으로 한 번의 쿼리로 goods 정보 가져오기
 		String sql = "SELECT * FROM goods WHERE goodsId IN ("
@@ -56,6 +53,23 @@ public class ListDao {
 		);
 
 		return goodsList;
+	}
+
+	public int getCartProductZero(MemberVo loginedMemberVo, ListVo listVo) {
+		// 1. 단일 조회를 위한 SQL
+		String sql = "SELECT COUNT(*) FROM cart WHERE user_no = ? AND goodsId = ? AND goodsColor = ? AND goodsSize = ?";
+
+		Integer result = jdbcTemplate.queryForObject(sql, Integer.class, loginedMemberVo.getUser_no(),
+				listVo.getGoodsId(), listVo.getGoodsColor(), listVo.getGoodsSize());
+
+		return result != null ? result : 0;
+	}
+
+	public int updateCartProduct(MemberVo loginedMemberVo, ListVo listVo) {
+		String sql = "UPDATE cart SET goodsCnt = goodsCnt + ? WHERE user_no = ? AND goodsId = ? AND goodsColor = ? AND goodsSize = ?";
+
+		return jdbcTemplate.update(sql, listVo.getGoodsCnt(), loginedMemberVo.getUser_no(), listVo.getGoodsId(),
+				listVo.getGoodsColor(), listVo.getGoodsSize());
 	}
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +26,28 @@
 						<p class="product-sale">Sale: ${home.goodsSale}</p>
 
 						<p>
-							<input type="text" name="goodsColor" placeholder="색깔" />
+							색깔 : <select name="goodsColor">
+								<option value="blue">blue</option>
+								<option value="red">red</option>
+								<option value="green">green</option>
+								<option value="black">black</option>
+							</select>
 						</p>
 						<p>
-							<input type="text" name="goodsSize" placeholder="사이즈" />
+							사이즈 : <select name="goodsSize">
+								<option value="S">S</option>
+								<option value="M">M</option>
+								<option value="L">L</option>
+								<option value="XL">XL</option>
+							</select>
 						</p>
 						<p>
-							<input type="text" name="goodsCnt" placeholder="수량" />
+
+							<select name="goodsCnt">
+								<c:forEach var="i" begin="1" end="10">
+									<option value="${i}">${i}</option>
+								</c:forEach>
+							</select>
 						</p>
 						<input type="hidden" name="goodsSale" value="${home.goodsSale }" />
 						<input type="hidden" name="goodsImg1" value="${home.goodsImg1 }" />

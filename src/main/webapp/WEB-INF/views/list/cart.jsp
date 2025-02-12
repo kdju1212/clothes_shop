@@ -24,15 +24,23 @@ function redirectToInfo(goodsId) {
 
 	<div>
 		<div>
-			<c:forEach var="item" items="${cart}">
-				<div onclick="redirectToInfo(${item.goodsId})">
-					<!-- <img id="imageSlider" style="width: 25%; height: 25%;"
+			<form action="/list/order" method="post">
+				<c:forEach var="item" items="${cart}">
+					<div>
+						<!-- <img id="imageSlider" style="width: 25%; height: 25%;"
 						src="${item.goodsImg1}" alt="${item.goodsName}" />  -->
-					<img id="imageSlider" style="width: 150px; height: 150px;"
-						src="/images/1ec915ab854c302720f315f2455d3fe2.jpg"
-						alt="${item.goodsName}" /> ${item.goodsName} ${item.goodsCnt } ${item.goodsSale }
-				</div>
-			</c:forEach>
+						<img id="imageSlider" style="width: 150px; height: 150px;"
+							src="/images/1ec915ab854c302720f315f2455d3fe2.jpg"
+							alt="${item.goodsName}" onclick="redirectToInfo(${item.goodsId})" />
+						${item.goodsName} <select name="goodsColor">
+							<c:forEach var="i" begin="1" end="10">
+								<option value="${i}" ${i == item.goodsCnt ? 'selected' : ''}>${i}</option>
+							</c:forEach>
+						</select>${item.goodsSize } ${item.goodsSale } <input type="submit"
+							value="주문하기" />
+					</div>
+				</c:forEach>
+			</form>
 		</div>
 	</div>
 </body>

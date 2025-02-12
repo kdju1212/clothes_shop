@@ -28,4 +28,14 @@ public class ListService {
 
 		return listDao.getGoodsListByUserId(loginedMemberVo.getUser_no());
 	}
+
+	public int getCartProductZero(MemberVo loginedMemberVo, ListVo listVo) {
+
+		return listDao.getCartProductZero(loginedMemberVo, listVo);
+	}
+
+	public int updateCartProduct(MemberVo loginedMemberVo, ListVo listVo) {
+
+		return listDao.updateCartProduct(loginedMemberVo, listVo);
+	}
 }

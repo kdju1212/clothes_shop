@@ -30,8 +30,22 @@ public class ListController {
 
 		MemberVo loginedMemberVo = (MemberVo) session.getAttribute("loginedMemberVo");
 
-		int cart1 = listService.setCartProduct(loginedMemberVo, listVo);
+		int result = listService.getCartProductZero(loginedMemberVo, listVo);
+
+		if (result == 0) {
+			int cart1 = listService.setCartProduct(loginedMemberVo, listVo);
+			if (cart1 > 0) {
+				List<ListVo> cart = listService.getGoodsListByUserId(loginedMemberVo);
+
+				model.addAttribute("cart", cart);
+				nextPage = "redirect:/list/cart";
+			}
+		}
+
+		int cart1 = listService.updateCartProduct(loginedMemberVo, listVo);
+		
 		if (cart1 > 0) {
+			
 			List<ListVo> cart = listService.getGoodsListByUserId(loginedMemberVo);
 
 			model.addAttribute("cart", cart);
@@ -43,14 +57,13 @@ public class ListController {
 
 	/* 장바구니 list */
 	@GetMapping("cart")
-	public String cart(HttpSession session, Model model, ListVo listVo) {
+	public String cart(HttpSession session, Model model) {
 
 		String nextPage = "list/cart";
 
 		MemberVo loginedMemberVo = (MemberVo) session.getAttribute("loginedMemberVo");
 
 		List<ListVo> cart = listService.getCartProduct(loginedMemberVo);
-
 		model.addAttribute("cart", cart);
 
 		return nextPage;
