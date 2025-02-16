@@ -14,10 +14,10 @@
 
 			<form action="/list/addcart" method="post">
 				<div class="product-card">
-					<!-- <img src="${home.goodsImg1}" alt="${home.goodsName}"
-					class="product-image">-->
-					<img src="/images/1ec915ab854c302720f315f2455d3fe2.jpg"
+					<img src="<c:url value='/libraryUploadImg/${home.goodsImg1}' />"
 						alt="${home.goodsName}" class="product-image">
+					<!-- <img src="/images/1ec915ab854c302720f315f2455d3fe2.jpg"
+						alt="${home.goodsName}" class="product-image"> -->
 					<div class="product-info">
 						<h2 class="product-name">${home.goodsName}</h2>
 						<p class="product-category">카테고리: ${home.goodsCategory}</p>

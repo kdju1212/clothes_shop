@@ -38,4 +38,9 @@ public class ListService {
 
 		return listDao.updateCartProduct(loginedMemberVo, listVo);
 	}
+
+	public int goodsInsert(HomeVo recipe) {
+		return listDao.goodsInsert(recipe);
+
+	}
 }

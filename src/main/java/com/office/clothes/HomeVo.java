@@ -1,5 +1,7 @@
 package com.office.clothes;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 
 @Data
@@ -19,4 +21,7 @@ public class HomeVo {
 	String goodsImg2;
 	String goodsImg3;
 	String goodsDate;
+	MultipartFile goodsImgUrl1; // 파일 경로
+	MultipartFile goodsImgUrl2; // 파일 경로
+	MultipartFile goodsImgUrl3; // 파일 경로
 }

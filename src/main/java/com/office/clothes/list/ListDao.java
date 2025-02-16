@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.office.clothes.HomeVo;
 import com.office.clothes.member.MemberVo;
 
 @Repository
@@ -70,6 +71,18 @@ public class ListDao {
 
 		return jdbcTemplate.update(sql, listVo.getGoodsCnt(), loginedMemberVo.getUser_no(), listVo.getGoodsId(),
 				listVo.getGoodsColor(), listVo.getGoodsSize());
+	}
+
+	public int goodsInsert(HomeVo homeVo) {
+
+		String sql = "insert into goods values(goods_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,SYSDATE)";
+		int result = jdbcTemplate.update(sql, homeVo.getGoodsName(), homeVo.getGoodsCategory(),
+				homeVo.getGoodsContent(), homeVo.getGoodsSize(), homeVo.getGoodsColor(), homeVo.getGoodsPrice(),
+				homeVo.getGoodsSale(), homeVo.getGoodsInventory(), 0, homeVo.getGoodsImg1(), homeVo.getGoodsImg2(),
+				homeVo.getGoodsImg3());
+		;
+
+		return result;
 	}
 
 }

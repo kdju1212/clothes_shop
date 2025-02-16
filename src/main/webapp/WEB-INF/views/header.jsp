@@ -51,8 +51,8 @@
 					<c:if test="${loginedMemberVo.user_id == 'admin'}">
 						<!-- 관리자 -->
 						<li><a href="<c:url value='/' />">홈</a></li>
-						<li><a href="<c:url value='/list/recipeList' />">레시피 등록</a></li>
-						<li><a href="<c:url value='/member/logoutConfirm' />"
+						<li><a href="<c:url value='/list/addclothes' />">레시피 등록</a></li>
+						<li><a href="<c:url value='/member/logout' />"
 							onclick="return logoutCheck()">로그아웃</a></li>
 						<li><a href="<c:url value='/message' />">쪽지함</a></li>
 						<li class="welcome-message">&nbsp;&nbsp;관리자 모드</li>
