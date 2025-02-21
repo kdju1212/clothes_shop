@@ -43,4 +43,9 @@ public class ListService {
 		return listDao.goodsInsert(recipe);
 
 	}
+
+	public List<HomeVo> category(String category) {
+		
+		return listDao.category(category);
+	}
 }

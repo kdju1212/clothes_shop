@@ -32,7 +32,7 @@ public class HomeController {
 
 		String nextPage = "details";
 
-		 HomeVo home = homeService.getgoodsNo(goodsId);
+		HomeVo home = homeService.getgoodsNo(goodsId);
 
 		model.addAttribute("home", home);
 

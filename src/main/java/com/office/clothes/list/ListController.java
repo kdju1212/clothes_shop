@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.office.clothes.HomeVo;
@@ -99,36 +100,22 @@ public class ListController {
 
 	/* 상품 추가 컨펌 */
 	@PostMapping("addclothesConfirm")
-	public String addclothesConfirm(HomeVo recipe) {
+	public String addclothesConfirm(@RequestParam("goodsImgUrl1") MultipartFile file1,
+			@RequestParam("goodsImgUrl2") MultipartFile file2, @RequestParam("goodsImgUrl3") MultipartFile file3,
+			HomeVo recipe) {
 
-		// 1. 첫 번째 이미지 처리
-		MultipartFile file1 = recipe.getGoodsImgUrl1();
 		if (file1 != null && !file1.isEmpty()) {
-			String fileName1 = saveFile(file1);
-			recipe.setGoodsImg1(fileName1); // DB 저장을 위해 파일명 설정
+			recipe.setGoodsImg1(saveFile(file1));
 		}
-
-		// 2. 두 번째 이미지 처리
-		MultipartFile file2 = recipe.getGoodsImgUrl2();
 		if (file2 != null && !file2.isEmpty()) {
-			String fileName2 = saveFile(file2);
-			recipe.setGoodsImg2(fileName2);
+			recipe.setGoodsImg2(saveFile(file2));
 		}
-
-		// 3. 세 번째 이미지 처리
-		MultipartFile file3 = recipe.getGoodsImgUrl3();
 		if (file3 != null && !file3.isEmpty()) {
-			String fileName3 = saveFile(file3);
-			recipe.setGoodsImg3(fileName3);
+			recipe.setGoodsImg3(saveFile(file3));
 		}
 
-		// DB에 레시피 정보 저장
 		int result = listService.goodsInsert(recipe);
-
-		if (result > 0) {
-			return "redirect:/"; // 성공 시 리디렉션
-		}
-		return "ng";
+		return result > 0 ? "redirect:/" : "ng";
 	}
 
 	private String saveFile(MultipartFile file) {
@@ -158,6 +145,19 @@ public class ListController {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	/* 카테고리로 찾기 */
+	@GetMapping("filter")
+	public String filter(@RequestParam("category") String category, Model model) {
+
+		String nextPage = "list/filter";
+
+		List<HomeVo> categorys = listService.category(category);
+
+		model.addAttribute("categorys", categorys);
+
+		return nextPage;
 	}
 
 }

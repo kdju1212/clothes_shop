@@ -14,7 +14,7 @@
 
 			<form action="/list/addcart" method="post">
 				<div class="product-card">
-					<img src="<c:url value='/libraryUploadImg/${home.goodsImg1}' />"
+					<img src="/library/upload/${home.goodsImg1}"
 						alt="${home.goodsName}" class="product-image">
 					<!-- <img src="/images/1ec915ab854c302720f315f2455d3fe2.jpg"
 						alt="${home.goodsName}" class="product-image"> -->

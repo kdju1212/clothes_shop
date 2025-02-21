@@ -75,7 +75,7 @@ public class ListDao {
 
 	public int goodsInsert(HomeVo homeVo) {
 
-		String sql = "insert into goods values(goods_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,SYSDATE)";
+		String sql = "insert into goods values(goods_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE)";
 		int result = jdbcTemplate.update(sql, homeVo.getGoodsName(), homeVo.getGoodsCategory(),
 				homeVo.getGoodsContent(), homeVo.getGoodsSize(), homeVo.getGoodsColor(), homeVo.getGoodsPrice(),
 				homeVo.getGoodsSale(), homeVo.getGoodsInventory(), 0, homeVo.getGoodsImg1(), homeVo.getGoodsImg2(),
@@ -83,6 +83,16 @@ public class ListDao {
 		;
 
 		return result;
+	}
+
+	public List<HomeVo> category(String category) {
+
+		String sql = "select * from goods where goodscategory = ?";
+
+		RowMapper<HomeVo> rowMapper = new BeanPropertyRowMapper<>(HomeVo.class);
+
+		// 쿼리 실행: 댓글 목록 가져오기
+		return jdbcTemplate.query(sql, rowMapper, category);
 	}
 
 }
