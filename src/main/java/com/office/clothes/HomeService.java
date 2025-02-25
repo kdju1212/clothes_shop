@@ -21,4 +21,9 @@ public class HomeService {
 		return homeDao.getgoodsNo(goodsId);
 	}
 
+	public void incrementViewCount(Integer goodsId) {
+		homeDao.incrementViewCount(goodsId);
+
+	}
+
 }

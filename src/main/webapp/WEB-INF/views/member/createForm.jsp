@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
 				placeholder="휴대폰번호를 입력하세요" required />
 		</p>
 		<p>
-			성별 : <select name="gender" id="gender" >
+			성별 : <select name="gender" id="gender">
 				<option value="1">남성</option>
 				<option value="2">여성</option>
 			</select>

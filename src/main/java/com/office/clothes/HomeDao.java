@@ -32,4 +32,9 @@ public class HomeDao {
 		return jdbcTemplate.queryForObject(sql, rowMapper, goodsId);
 	}
 
+	public void incrementViewCount(Integer goodsId) {
+		String sql = "update goods set goodsCount = goodsCount + 1 where goodsId = ?";
+		jdbcTemplate.update(sql, goodsId);
+	}
+
 }

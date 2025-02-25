@@ -45,17 +45,18 @@ public class ListController {
 				model.addAttribute("cart", cart);
 				nextPage = "redirect:/list/cart";
 			}
-		}
+		} else {
 
-		int cart1 = listService.updateCartProduct(loginedMemberVo, listVo);
+			int cart1 = listService.updateCartProduct(loginedMemberVo, listVo);
 
-		if (cart1 > 0) {
+			if (cart1 > 0) {
 
-			List<ListVo> cart = listService.getGoodsListByUserId(loginedMemberVo);
+				List<ListVo> cart = listService.getGoodsListByUserId(loginedMemberVo);
 
-			model.addAttribute("cart", cart);
-			// 어차피 동적으로 부꿀거임
-			nextPage = "redirect:/list/cart";
+				model.addAttribute("cart", cart);
+				// 어차피 동적으로 부꿀거임
+				nextPage = "redirect:/list/cart";
+			}
 		}
 		return nextPage;
 	}

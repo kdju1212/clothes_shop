@@ -31,6 +31,9 @@ public class HomeController {
 		// int parsedGoodsId = Integer.parseInt(goodsId);
 
 		String nextPage = "details";
+		
+		// 조회수 증가
+	    homeService.incrementViewCount(goodsId);
 
 		HomeVo home = homeService.getgoodsNo(goodsId);
 

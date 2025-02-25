@@ -24,7 +24,7 @@
 							<li><a href="<c:url value='/list/filter?category=신발' />">신발</a></li>
 							<li><a href="<c:url value='/list/filter?category=기타' />">기타</a></li>
 						</ul></li>
-					<li><a href="<c:url value='/list/ranking' />">랭킹</a></li>
+
 					<li><a href="<c:url value='/member/loginForm' />">로그인</a></li>
 					<li><a href="<c:url value='/member/createForm' />">회원가입</a></li>
 				</c:if>
