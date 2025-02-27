@@ -14,17 +14,24 @@
 			상품명 : <input type="text" name="goodsName">
 		</p>
 		<p>
-			카테고리 : <input type="text" name="goodsCategory">
+			카테고리 : <input type="radio" name="goodsCategory" value="상의">
+			상의 <input type="radio" name="goodsCategory" value="하의"> 하의 <input
+				type="radio" name="goodsCategory" value="아우터"> 아우터 <input
+				type="radio" name="goodsCategory" value="신발"> 신발 <input
+				type="radio" name="goodsCategory" value="기타"> 기타
 		</p>
 		<p>
 			상품내용 : <input type="text" name="goodsContent">
 		</p>
 		<p>
-			사이즈 : <input type="checkbox" name="goodsSize">
+			사이즈 : <input type="radio" name="goodsSize" value="S"> S <input
+				type="radio" name="goodsSize" value="M"> M <input
+				type="radio" name="goodsSize" value="L"> L
 		</p>
-		<p>
-			상품색깔 : <input type="checkbox" name="goodsColor">
-		</p>
+		색깔 : <input type="radio" name="goodsColor" value="red"> 빨강 <input
+			type="radio" name="goodsColor" value="blue"> 파랑 <input
+			type="radio" name="goodsColor" value="green"> 초록 <input
+			type="radio" name="goodsColor" value="black"> 검정
 		<p>
 			상품 정가 : <input type="text" name="goodsPrice">
 		</p>
