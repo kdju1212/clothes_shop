@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* 기본 스타일 리셋 */
+body {
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f7fc;
+	color: #333;
+}
+
+/* 로그인 페이지 중앙 정렬 */
+.login-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.login-form {
+	background-color: #fff;
+	padding: 2rem 3rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+}
+
+.login-form h2 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	color: #4c6ef5;
+}
+
+.input-field {
+	width: 100%;
+	padding: 0.75rem;
+	margin: 1rem 0;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+.input-field:focus {
+	border-color: #4c6ef5;
+	outline: none;
+}
+
+.submit-btn {
+	width: 100%;
+	padding: 1rem;
+	background-color: #4c6ef5;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+	background-color: #2c4af0;
+}
+
+/* 반응형 디자인 */
+@media ( max-width : 768px) {
+	.login-form {
+		padding: 1.5rem 2rem;
+	}
+	.submit-btn {
+		font-size: 1rem;
+	}
+}

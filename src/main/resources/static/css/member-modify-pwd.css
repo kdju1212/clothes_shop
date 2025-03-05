@@ -1,0 +1,78 @@
+/* 기본 스타일 리셋 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 페이지 전체 컨테이너 */
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2rem;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+h1 {
+	text-align: center;
+	color: #333;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+	margin-bottom: 1rem;
+}
+
+/* 레이블 스타일 */
+.form-group label {
+	display: block;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	color: #333;
+}
+
+/* 입력 필드 스타일 */
+.form-group input[type="password"] {
+	width: 100%;
+	padding: 0.8rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
+	box-sizing: border-box;
+}
+
+/* 입력 필드에 포커스 시 스타일 */
+.form-group input[type="password"]:focus {
+	border-color: #4c6ef5;
+	box-shadow: 0 0 5px rgba(76, 110, 245, 0.3);
+}
+
+/* 제출 버튼 스타일 */
+.submit-btn {
+	width: 100%;
+	padding: 1rem;
+	font-size: 1rem;
+	color: white;
+	background-color: #4c6ef5;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+/* 제출 버튼 호버 효과 */
+.submit-btn:hover {
+	background-color: #3a56d1;
+}
+
+/* 폼 그룹과 버튼 사이 간격 */
+.form-group button {
+	margin-top: 1rem;
+}

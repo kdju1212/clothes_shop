@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>header.jsp</title>
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<!-- 외부 CSS 파일 연결 -->
 </head>
 <body>
 	<header>
